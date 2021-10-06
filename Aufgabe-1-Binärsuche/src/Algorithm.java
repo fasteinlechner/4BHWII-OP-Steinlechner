@@ -47,6 +47,7 @@ public class Algorithm {
 	public static int[] getArray(int anz) {
 		int[] arr = new int[anz];
 		int zahl = 0;
+		int String name;
 		
 		for(int i =0; i< arr.length; i++) {
 			arr[i]=zahl;
