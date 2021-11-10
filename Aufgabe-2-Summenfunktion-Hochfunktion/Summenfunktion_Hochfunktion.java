@@ -40,14 +40,6 @@ public class Summenfunktion_Hochfunktion{
                            "Rekursive Potenzfunktion: \t\tErgebnis: "+hochRek+"\t\tDauer: "+timeHochRek+" nanoseconds\n"+
                            "Endrekursive Potenzfunktion: \t\tErgebnis: "+hochEndRek+"\t\tDauer: "+timeHochEndRek+" nanoseconds\n");
 
-
-
-
-
-        
-
-
-        
     }
 
 
