@@ -1,18 +1,55 @@
 public class Summenfunktion_Hochfunktion{
     public static void main (String[]args){
+        //Aufruf der Summenfunktion auf alle Arten
+        long startSumIter = System.nanoTime();
+        int sumIter= sumIter(100);
+        long timeSumIter= System.nanoTime()-startSumIter;
+
+        long startSumRek = System.nanoTime();
+        int sumRek= sumRek(100);
+        long timeSumRek= System.nanoTime()-startSumRek;
+
+        long startSumEndRek = System.nanoTime();
+        long sumEndRek= sumEndRek(0,100);
+        long timeSumEndRek= System.nanoTime()-startSumEndRek;
         
-        //Aufruf der Summenfunktion auf beide Arten
-        System.out.println(sumIter(100));
-        System.out.println(sumRek(100));
-        System.out.println(sumEndRek(0,100));
 
         //Aufruf der Hochfunktion auf beide Arten
-        System.out.println(hochIter(3,3));
-        System.out.println(hochRek(3,3));
-        System.out.println(hochEndRek(1,3, 3));
+        long startHochIter = System.nanoTime();
+        int hochIter= hochIter(3,3);
+        long timeHochIter= System.nanoTime()-startHochIter;
+
+        long startHochRek = System.nanoTime();
+        int hochRek= hochRek(3,3);
+        long timeHochRek= System.nanoTime()-startHochRek;
+
+        long startHochEndRek = System.nanoTime();
+        int hochEndRek= hochEndRek(1,3,3);
+        long timeHochEndRek= System.nanoTime()-startHochEndRek;
+
+
+
+        System.out.println("Summenfunktionen\n====================");
+        System.out.println("Iterative Summenfunktion: \t\tErgebnis: "+sumIter+"\t\tDauer: "+timeSumIter+" nanosecond\n"+
+                           "Rekursive Summenfunktion: \t\tErgebnis: "+sumRek+"\t\tDauer: "+timeSumRek+" nanoseconds\n"+
+                           "Endrekursive Summenfunktion: \t\tErgebnis: "+sumEndRek+"\t\tDauer: "+timeSumEndRek+" nanoseconds\n");
+
+
+        System.out.println("Potenzfunktionen\n====================");
+        System.out.println("Iterative Potenzfunktion: \t\tErgebnis: "+hochIter+"\t\tDauer: "+timeHochIter+" nanosecond\n"+
+                           "Rekursive Potenzfunktion: \t\tErgebnis: "+hochRek+"\t\tDauer: "+timeHochRek+" nanoseconds\n"+
+                           "Endrekursive Potenzfunktion: \t\tErgebnis: "+hochEndRek+"\t\tDauer: "+timeHochEndRek+" nanoseconds\n");
+
+
+
+
+
+        
+
 
         
     }
+
 
     public static int sumIter(int num){
         int result=0;
