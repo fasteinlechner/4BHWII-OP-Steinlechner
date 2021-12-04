@@ -6,9 +6,9 @@ public class Algorithm {
 	static int mid;
 	
 	public static void main(String[]args) {
-		iterativ(856, array);
+		System.out.println(iterativ(800, array));
 		System.out.println(zaehler1);
-		binaer(856, array);
+		System.out.println(binaer(800, array));
 		System.out.println(zaehler2);
 	}
 	

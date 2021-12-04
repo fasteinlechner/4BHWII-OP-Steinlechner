@@ -1,6 +1,6 @@
 public class Summenfunktion_Hochfunktion{
     public static void main (String[]args){
-        //Aufruf der Summenfunktion auf alle Arten
+     /*   //Aufruf der Summenfunktion auf alle Arten
         long startSumIter = System.nanoTime();
         int sumIter= sumIter(100);
         long timeSumIter= System.nanoTime()-startSumIter;
@@ -18,6 +18,8 @@ public class Summenfunktion_Hochfunktion{
         long startHochIter = System.nanoTime();
         int hochIter= hochIter(3,3);
         long timeHochIter= System.nanoTime()-startHochIter;
+
+
 
         long startHochRek = System.nanoTime();
         int hochRek= hochRek(3,3);
@@ -38,7 +40,16 @@ public class Summenfunktion_Hochfunktion{
         System.out.println("Potenzfunktionen\n====================");
         System.out.println("Iterative Potenzfunktion: \t\tErgebnis: "+hochIter+"\t\tDauer: "+timeHochIter+" nanosecond\n"+
                            "Rekursive Potenzfunktion: \t\tErgebnis: "+hochRek+"\t\tDauer: "+timeHochRek+" nanoseconds\n"+
-                           "Endrekursive Potenzfunktion: \t\tErgebnis: "+hochEndRek+"\t\tDauer: "+timeHochEndRek+" nanoseconds\n");
+                           "Endrekursive Potenzfunktion: \t\tErgebnis: "+hochEndRek+"\t\tDauer: "+timeHochEndRek+" nanoseconds\n");*/
+
+
+        System.out.println(hochIter(3, 3));
+        System.out.println(sumIter(27));
+        System.out.println("Meine Methode: "+hochR(3,3));
+        System.out.println(fibonacci(6));
+
+
+        
 
     }
 
@@ -74,7 +85,7 @@ public class Summenfunktion_Hochfunktion{
         }
         return result;
     }
-
+   
     public static int hochRek(int num, int hoch){
         if (hoch==0){
             return 1;
@@ -87,5 +98,22 @@ public class Summenfunktion_Hochfunktion{
             return res;
         }
         return hochEndRek(res*num,num, hoch-1);
+    }
+
+    public static int hochR(int zahl, int hoch){
+        if(hoch==0){
+            return 1;
+        }
+        return zahl * hochR(zahl, hoch-1);
+    }
+
+    public static int fibonacci(int number) {
+        if (number == 0)
+            return 0;
+    
+        if (number == 1)
+            return 1;
+    
+        return fibonacci(number - 1) + fibonacci(number - 2);
     }
 }
