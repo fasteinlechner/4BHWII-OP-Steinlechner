@@ -3,7 +3,7 @@ import java.util.*;
 public class Übung_1 {
     
     public static void main (String args[]){
-        int [] unsortiert = generateArray(10000);
+        int [] unsortiert = generateArray(10);
         System.out.println("Unsortierte Liste: ");
         for(Integer i : unsortiert){
             System.out.print(i+", ");
@@ -49,8 +49,8 @@ public class Übung_1 {
     }
     public static int[] bubbleSortSlow(int[] unsorted){
         int temp;
-        for(int i = 1; i<unsorted.length; i++){
-            for(int j=0; j<unsorted.length-i; j++){
+        for(int i = 0; i<unsorted.length; i++){
+            for(int j=0; j<unsorted.length-i-1; j++){
                 if(unsorted[j]> unsorted[j+1]){
                     temp=unsorted[j];
                     unsorted[j]=unsorted[j+1];
@@ -64,9 +64,9 @@ public class Übung_1 {
     public static int[] bubbleSortFast(int[] unsorted){
         int temp;
         boolean noSwap;
-        for(int i=1; i<unsorted.length; i++){
+        for(int i=0; i<unsorted.length; i++){
             noSwap=true;
-            for(int j=0; j<unsorted.length-i; j++){
+            for(int j=0; j<unsorted.length-i-1; j++){
                 if(unsorted[j]> unsorted[j+1]){
                     temp= unsorted[j];
                     unsorted[j]=unsorted[j+1];
@@ -84,20 +84,24 @@ public class Übung_1 {
         return unsorted;
     }
     public static int[] selectionSort(int[] unsorted){
-        for (int i =1; i< unsorted.length; i++){
+        for (int i =0; i< unsorted.length; i++){
             int temp;
+            int min=i;
             for(int j=i+1; j< unsorted.length; j++){
                 if(unsorted[j]<unsorted[i]){
-                    temp= unsorted[i];
-                    unsorted[i]= unsorted[j];
-                    unsorted[j]= temp;
+                    min=j;
                 }
+            }
+            if(min !=i){
+                temp= unsorted[i];
+                unsorted[i]= unsorted[min];
+                unsorted[min]= temp;
             }
         }
         return unsorted;
     }
     public static int[] insertionSort(int[] unsorted){
-        for (int i =1; i<unsorted.length; i++){
+        for (int i =0; i<unsorted.length; i++){
             int temp= unsorted[i];
             int j = i;
             while(j>0 && unsorted[j-1]>temp){
