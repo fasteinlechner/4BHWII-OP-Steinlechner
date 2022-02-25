@@ -42,6 +42,9 @@ public class Quicksort{
             quickSort(arr, pi+1, high);
         }
     }
+
+
+    
     public static int[] generateArray(int anz){
         int[] arr = new int[anz];
         Random rand = new Random();
